@@ -497,3 +497,485 @@ macOS
 El JDK proporciona las herramientas necesarias para **compilar y ejecutar programas Java**, mientras que IntelliJ IDEA proporciona el entorno gráfico para desarrollar, organizar, ejecutar y depurar los proyectos.
 
 Con esta configuración es posible comenzar a desarrollar aplicaciones utilizando Java y programación orientada a objetos.
+
+
+# Tipos de datos primitivos en Java
+
+## 1. ¿Qué son los tipos de datos primitivos?
+
+Los **tipos de datos primitivos** son los tipos de datos básicos que proporciona Java para almacenar valores simples directamente en una variable.
+
+Java cuenta con **8 tipos de datos primitivos**:
+
+- `byte`
+- `short`
+- `int`
+- `long`
+- `float`
+- `double`
+- `char`
+- `boolean`
+
+A diferencia de las clases y objetos, los tipos primitivos no son objetos y están diseñados para almacenar valores de forma sencilla y eficiente.
+
+---
+
+# 2. Tipos de datos primitivos
+
+## 2.1. `byte`
+
+El tipo `byte` se utiliza para almacenar números enteros pequeños.
+
+| Característica | Valor |
+|---|---|
+| Tamaño | 8 bits |
+| Rango | -128 a 127 |
+| Valor por defecto | `0` |
+| Tipo de dato | Entero |
+
+### Uso típico
+
+Se utiliza cuando se necesitan almacenar números enteros pequeños y se desea utilizar poca memoria.
+
+```java
+byte edad = 25;
+byte temperatura = -10;
+```
+
+---
+
+## 2.2. `short`
+
+El tipo `short` permite almacenar números enteros más grandes que `byte`, pero menores que `int`.
+
+| Característica | Valor |
+|---|---|
+| Tamaño | 16 bits |
+| Rango | -32.768 a 32.767 |
+| Valor por defecto | `0` |
+| Tipo de dato | Entero |
+
+### Uso típico
+
+Puede utilizarse cuando se necesitan números enteros dentro de un rango relativamente pequeño y se desea utilizar menos memoria que con un `int`.
+
+```java
+short cantidad = 30000;
+```
+
+---
+
+## 2.3. `int`
+
+El tipo `int` es el tipo de dato entero más utilizado en Java.
+
+| Característica | Valor |
+|---|---|
+| Tamaño | 32 bits |
+| Rango | -2.147.483.648 a 2.147.483.647 |
+| Valor por defecto | `0` |
+| Tipo de dato | Entero |
+
+### Uso típico
+
+Se utiliza para almacenar números enteros en la mayoría de las situaciones.
+
+```java
+int edad = 25;
+int cantidadProductos = 150;
+int temperatura = -5;
+```
+
+En Java, cuando se escribe un número entero sin especificar otro tipo, normalmente se interpreta como un `int`.
+
+---
+
+## 2.4. `long`
+
+El tipo `long` permite almacenar números enteros mucho más grandes que `int`.
+
+| Característica | Valor |
+|---|---|
+| Tamaño | 64 bits |
+| Rango | -9.223.372.036.854.775.808 a 9.223.372.036.854.775.807 |
+| Valor por defecto | `0L` |
+| Tipo de dato | Entero |
+
+### Uso típico
+
+Se utiliza cuando los valores enteros pueden superar el rango permitido por `int`.
+
+Por ejemplo, puede utilizarse para almacenar identificadores numéricos muy grandes, cantidades de datos o valores relacionados con tiempo expresados en milisegundos.
+
+```java
+long poblacion = 8000000000L;
+long distancia = 90000000000L;
+```
+
+La letra `L` indica que el valor es de tipo `long`.
+
+---
+
+# 3. Tipos de datos para números decimales
+
+Java cuenta con dos tipos primitivos para representar números con decimales:
+
+- `float`
+- `double`
+
+---
+
+## 3.1. `float`
+
+El tipo `float` se utiliza para almacenar números de punto flotante con precisión simple.
+
+| Característica | Valor |
+|---|---|
+| Tamaño | 32 bits |
+| Precisión aproximada | 6-7 dígitos decimales |
+| Rango aproximado | ±3.4 × 10³⁸ |
+| Valor por defecto | `0.0f` |
+| Tipo de dato | Decimal |
+
+### Uso típico
+
+Se utiliza cuando se necesitan valores decimales y no se requiere una precisión tan alta.
+
+```java
+float altura = 1.75f;
+float temperatura = 36.5f;
+```
+
+Es necesario colocar `f` al final del número para indicar que se trata de un `float`.
+
+---
+
+## 3.2. `double`
+
+El tipo `double` almacena números de punto flotante con doble precisión.
+
+| Característica | Valor |
+|---|---|
+| Tamaño | 64 bits |
+| Precisión aproximada | 15-16 dígitos decimales |
+| Rango aproximado | ±1.7 × 10³⁰⁸ |
+| Valor por defecto | `0.0` |
+| Tipo de dato | Decimal |
+
+### Uso típico
+
+Es el tipo decimal más utilizado en Java cuando se necesita mayor precisión.
+
+```java
+double precio = 199.99;
+double promedio = 4.56789;
+double distancia = 1500.75;
+```
+
+Cuando se escribe un número decimal sin especificar el tipo, Java normalmente lo interpreta como `double`.
+
+---
+
+# 4. `char`
+
+El tipo `char` se utiliza para almacenar **un solo carácter**.
+
+| Característica | Valor |
+|---|---|
+| Tamaño | 16 bits |
+| Rango | `'\u0000'` a `'\uFFFF'` |
+| Valor numérico | 0 a 65.535 |
+| Valor por defecto | `'\u0000'` |
+| Tipo de dato | Carácter |
+
+Java utiliza `char` para representar unidades de código UTF-16.
+
+### Uso típico
+
+Se utiliza para almacenar un carácter individual, como una letra, número o símbolo.
+
+```java
+char inicial = 'J';
+char letra = 'A';
+char simbolo = '#';
+```
+
+Es importante utilizar **comillas simples** para un `char`:
+
+```java
+char letra = 'A';
+```
+
+Mientras que las cadenas de texto utilizan comillas dobles:
+
+```java
+String nombre = "Juan";
+```
+
+`String` **no es un tipo primitivo**, sino una clase.
+
+---
+
+# 5. `boolean`
+
+El tipo `boolean` representa un valor lógico que solamente puede tener dos estados:
+
+```text
+true
+false
+```
+
+| Característica | Valor |
+|---|---|
+| Valores posibles | `true` / `false` |
+| Tamaño | No está definido por la especificación del lenguaje |
+| Valor por defecto | `false` |
+| Tipo de dato | Lógico |
+
+### Uso típico
+
+Se utiliza principalmente para representar condiciones o estados.
+
+```java
+boolean esMayorDeEdad = true;
+boolean usuarioActivo = false;
+```
+
+También es muy utilizado en estructuras de control:
+
+```
+if (esMayorDeEdad) {
+    System.out.println("Es mayor de edad");
+}
+```
+
+> **Nota:** a diferencia de los otros tipos primitivos, Java no especifica un tamaño exacto en bits para `boolean`.
+
+---
+
+# 6. Tabla comparativa
+
+| Tipo | Tamaño | Rango / valores | Uso típico |
+|---|---:|---|---|
+| `byte` | 8 bits | -128 a 127 | Números enteros pequeños |
+| `short` | 16 bits | -32.768 a 32.767 | Enteros pequeños/medianos |
+| `int` | 32 bits | -2.147.483.648 a 2.147.483.647 | Enteros de uso general |
+| `long` | 64 bits | -9.22 × 10¹⁸ a 9.22 × 10¹⁸ | Enteros muy grandes |
+| `float` | 32 bits | ±3.4 × 10³⁸ aprox. | Decimales con precisión simple |
+| `double` | 64 bits | ±1.7 × 10³⁰⁸ aprox. | Decimales con mayor precisión |
+| `char` | 16 bits | 0 a 65.535 | Un solo carácter |
+| `boolean` | No especificado | `true` / `false` | Condiciones y estados |
+
+---
+
+# 7. Diferencias principales entre los tipos
+
+La principal diferencia entre los tipos primitivos está en **el tipo de información que pueden almacenar, la cantidad de memoria que utilizan y el rango de valores que pueden representar**.
+
+### Enteros
+
+Los tipos `byte`, `short`, `int` y `long` almacenan números enteros.
+
+A medida que aumenta el tamaño en bits, aumenta también el rango de valores que pueden representar:
+
+```text
+byte → short → int → long
+ 8      16      32      64 bits
+```
+
+Por ejemplo:
+
+```
+byte numeroPequeno = 100;
+int numero = 1000000;
+long numeroGrande = 10000000000L;
+```
+
+---
+
+### Decimales
+
+`float` y `double` almacenan números con punto decimal.
+
+La principal diferencia es la **precisión**:
+
+```text
+float  → 32 bits → menor precisión
+double → 64 bits → mayor precisión
+```
+
+Por ejemplo:
+
+```
+float precio = 19.99f;
+double resultado = 19.999999999;
+```
+
+En la mayoría de los casos generales se utiliza `double`.
+
+---
+
+### Caracteres
+
+`char` almacena un único carácter:
+
+```java
+char letra = 'J';
+```
+
+No debe confundirse con `String`, que permite almacenar una secuencia de caracteres:
+
+```java
+String nombre = "Juan";
+```
+
+`String` no es un tipo de dato primitivo.
+
+---
+
+### Valores lógicos
+
+`boolean` solamente permite dos valores:
+
+```
+true
+false
+```
+
+Por ejemplo:
+
+```
+boolean encendido = true;
+boolean disponible = false;
+```
+
+Es especialmente útil para representar condiciones.
+
+---
+
+# 8. Ejemplo utilizando todos los tipos primitivos
+
+```java
+public class TiposPrimitivos {
+
+    public static void main(String[] args) {
+
+        byte edad = 25;
+
+        short temperatura = 300;
+
+        int cantidad = 150000;
+
+        long poblacion = 8000000000L;
+
+        float altura = 1.75f;
+
+        double precio = 199.99;
+
+        char inicial = 'J';
+
+        boolean estudiante = true;
+
+        System.out.println("Edad: " + edad);
+        System.out.println("Temperatura: " + temperatura);
+        System.out.println("Cantidad: " + cantidad);
+        System.out.println("Población: " + poblacion);
+        System.out.println("Altura: " + altura);
+        System.out.println("Precio: " + precio);
+        System.out.println("Inicial: " + inicial);
+        System.out.println("¿Es estudiante?: " + estudiante);
+    }
+}
+```
+
+---
+
+# 9. Resumen
+
+Java tiene **8 tipos de datos primitivos**:
+
+```text
+┌──────────────────────────────┐
+│ Tipos de datos primitivos    │
+├──────────────────────────────┤
+│ byte                         │
+│ short                        │
+│ int                          │
+│ long                         │
+│ float                        │
+│ double                       │
+│ char                         │
+│ boolean                      │
+└──────────────────────────────┘
+```
+
+Se pueden agrupar de la siguiente manera:
+
+| Categoría | Tipos |
+|---|---|
+| Enteros | `byte`, `short`, `int`, `long` |
+| Decimales | `float`, `double` |
+| Carácter | `char` |
+| Lógico | `boolean` |
+
+La elección del tipo depende principalmente del **tipo de información que se desea almacenar, el rango de valores necesario y la precisión requerida**.
+
+En la práctica, los tipos que más se utilizan habitualmente son `int` para números enteros, `double` para números decimales, `boolean` para valores lógicos y `char` para caracteres individuales.
+
+# Impresión de texto en consola en Java
+
+En Java se puede mostrar texto, números u otra información en la consola utilizando principalmente `System.out.println()` y `System.out.print()`.
+
+## `System.out.println()`
+
+Se utiliza para imprimir información en la consola y **hacer un salto de línea** al finalizar.
+
+```
+System.out.println("Hola mundo");
+System.out.println("Bienvenido a Java");
+```
+
+Resultado:
+
+```text
+Hola mundo
+Bienvenido a Java
+```
+
+## `System.out.print()`
+
+También imprime información en la consola, pero **no realiza un salto de línea**.
+
+```
+System.out.print("Hola ");
+System.out.print("mundo");
+```
+
+Resultado:
+
+```text
+Hola mundo
+```
+
+## Diferencia
+
+La diferencia principal es que:
+
+- `System.out.println()` → imprime y pasa a la siguiente línea.
+- `System.out.print()` → imprime y permanece en la misma línea.
+
+### Ejemplo
+
+```
+System.out.print("Hola ");
+System.out.println("Juan");
+System.out.print("¿Cómo ");
+System.out.print("estás?");
+```
+
+Resultado:
+
+```text
+Hola Juan
+¿Cómo estás?
+```
